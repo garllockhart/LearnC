@@ -1,6 +1,6 @@
-# <p align="center"><b>Selamat Datang di LearnC</b></p>
+# <p align="center"><b>Welcome to LearnC</b></p>
 
 
-### 🤔 Apa itu LearnC?
+### 🤔 What is LearnC?
 
-LearnC merupakan repository yang saya gunakan untuk menyimpan progress pembelajaran saya dalam mengeksplorasi Bahasa Pemprogramman C.
+LearnC is a repository that I use to store my learning progress in exploring the C Programming Language.
