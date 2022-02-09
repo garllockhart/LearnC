@@ -139,7 +139,7 @@ void ShowTotal()
     } 
     
     printf("|==================================================|\n");
-    printf("|                                   Data Total     |\n");
+    printf("|                      Data Total                  |\n");
     printf("|==================================================|\n");
     printf("| Golongan Darah     Jumlah Pria     Jumlah Wanita |\n");
     printf("|==================================================|\n");
