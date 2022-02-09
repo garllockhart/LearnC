@@ -1,5 +1,5 @@
 /*
-Nama File		: bacakar.c
+Nama File		: ReadCharacter.cpp
 Deskripsi		: Contoh membaca char kemudian menulis nilai yang dibaca
 Dibuat Oleh		: Dosen DDP / 132 231 592
 Tanggal Dibuat	: 30/08/2001
@@ -11,14 +11,13 @@ Tanggal Diedit	: 17/11/2021
 
 int main()
 {
-//	Kamus Data
-	char cc;
+	char InputCharacter;
 	
-//	Program
 	printf("Hello\n");
-	printf("Baca 1 karakter : ");
-	scanf("%c", &cc);
-	printf("%c", cc);
+	printf("Read 1 character : ");
+	scanf("%c", &InputCharacter);
+	
+	printf("%c", InputCharacter);
 	printf("Bye\n");
 	
 	return 0;
