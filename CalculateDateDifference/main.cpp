@@ -53,7 +53,7 @@ int main()
 		printf("\n");
 		SelisihDate(D3, D4);
 		
-		printf("\n");
+		printf("\n\n");
 		printf("Lagi? (Y/T)");
 		
 		lagi = getch();

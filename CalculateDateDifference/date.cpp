@@ -85,7 +85,7 @@ void BacaDate (date * D)
 /* Memeriksa apakah suatu Tanggal valid, yaitu dengan memperhatikan batas akhir per bulan */
 boolean isValid(date D)
 {
-	if ((GetThn(D) < 1900)||(GetThn(D) > 30000)||(GetBln(D) < 1) ||(GetBln(D) > 12)||(GetTgl(D) < 1)||(GetTgl(D) > TglAkhir(D)))
+	if ((GetThn(D) < 1900) || (GetThn(D) > 30000) || (GetBln(D) < 1) || (GetBln(D) > 12) || (GetTgl(D) < 1) || (GetTgl(D) > TglAkhir(D)))
 		return (false);
 	else
 		return (true);
@@ -163,7 +163,7 @@ void NextDate (date D)
 /* Menampilkan selisih 2 Tanggal */
 void SelisihDate (date D1, date D2)
 {
-	int i;
+	int Count;
 	
 	printf("Tanggal Pertama ");
 	PrintObj(D1);
@@ -171,7 +171,23 @@ void SelisihDate (date D1, date D2)
 	printf("Tanggal Kedua ");
 	PrintObj(D2);
 	
-	i = ((GetThn(D2) - GetThn(D1)) * 365) + ((GetBln(D2) - GetBln(D1)) * 30) + (GetTgl(D2) - GetTgl(D1) - 2);
+	if(isKabisat(D1) == true){
+		if(GetBln(D1) == GetBln(D2)) {
+			Count = ((GetThn(D2) - GetThn(D1)) * 366) + ((GetBln(D2) - GetBln(D1)) * 30) + (GetTgl(D2) - GetTgl(D1));
+		} else if(GetBln(D1) == 2 || GetBln(D1) < 2) {
+			Count = ((GetThn(D2) - GetThn(D1)) * 365) + ((GetBln(D2) - GetBln(D1)) * 30) + (GetTgl(D2) - GetTgl(D1) - 1);
+		} else {
+			Count = ((GetThn(D2) - GetThn(D1)) * 365) + ((GetBln(D2) - GetBln(D1)) * 30) + (GetTgl(D2) - GetTgl(D1));
+		}	
+	} else if (GetBln(D1) <= 2) {
+		if(GetBln(D2) > 2) {
+			Count = ((GetThn(D2) - GetThn(D1)) * 365) + ((GetBln(D2) - GetBln(D1)) * 30) + (GetTgl(D2) - GetTgl(D1) - 2);
+		} else {
+			Count = ((GetThn(D2) - GetThn(D1)) * 365) + ((GetBln(D2) - GetBln(D1)) * 30) + (GetTgl(D2) - GetTgl(D1));
+		}
+	} else{
+		Count = ((GetThn(D2) - GetThn(D1)) * 365) + ((GetBln(D2) - GetBln(D1)) * 30) + (GetTgl(D2) - GetTgl(D1));
+	}
 	
-	printf("selisih dari tanggal tersebut adalah %d Hari", i);
+	printf("Selisih dari Tanggal tersebut adalah %d Hari", Count);
 }
